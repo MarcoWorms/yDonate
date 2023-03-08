@@ -12,4 +12,4 @@ This contract allows users to stake ERC20 tokens that are deposited in Yearn Vau
 
 
 <br />
-<img width="600" alt="Screenshot 2023-03-08 at 3 14 35 PM" src="https://user-images.githubusercontent.com/7863230/223863349-b0933b9d-fe52-40bf-bcbf-136a10150e2b.png">
+<img width="550" alt="Screenshot 2023-03-08 at 3 20 03 PM" src="https://user-images.githubusercontent.com/7863230/223864367-aca4a115-0c7b-40a7-9c22-c8297737985a.png">
