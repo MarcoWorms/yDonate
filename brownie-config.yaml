@@ -1,0 +1,26 @@
+# use Ganache's forked mainnet mode as the default network
+networks:
+  default: mainnet-fork
+
+autofetch_sources: true
+
+# require OpenZepplin Contracts
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts@4.5.0
+  - OpenZeppelin/openzeppelin-contracts-upgradeable@4.5.0
+
+# path remapping to support OpenZepplin imports with NPM-style path
+compiler:
+  solc:
+    version: 0.8.14
+    remappings:
+      - "@openzeppelin/contracts=OpenZeppelin/openzeppelin-contracts@4.5.0/contracts"
+      - "@openzeppelin/contracts-upgradeable=OpenZeppelin/openzeppelin-contracts-upgradeable@4.5.0/contracts"
+
+reports:
+  # exclude_paths:
+  exclude_contracts:
+    - SafeERC20
+    - ERC20
+    - Address
+    - Ownable
