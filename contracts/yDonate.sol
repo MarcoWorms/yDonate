@@ -62,8 +62,13 @@ contract yDonate {
 
         uint256 totalRedeemed = yVault.withdraw(stakedShares);
 
+        // yvault may return less than expected due to rounding
         if (stakedAmount > totalRedeemed) {
             stakedAmount = totalRedeemed;
+        }
+
+        if (want.allowance(address(this), yVaultAddress) < totalRedeemed) {
+            want.approve(yVaultAddress, 2**256 - 1);
         }
 
         want.transfer(msg.sender, stakedAmount);
