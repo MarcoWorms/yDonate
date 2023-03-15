@@ -12,6 +12,9 @@ yDonate automatically detects the vault for the token staked by using the [Yearn
 **Live preview at:**
 - https://ftmscan.com/address/0x4D4C0146A9672681E54B5a53cB2D177c9347C2a3
 
+
+<img width="750" alt="Screenshot 2023-03-15 at 3 10 11 PM" src="https://user-images.githubusercontent.com/7863230/225454965-5e3e3985-cb63-419c-9bd6-ff926db01274.png">
+
 ## Usage
 
 The yDonate contract allows users to stake their tokens in Yearn Finance vaults and automatically donate the generated yield to a predefined receiver. This contract uses OpenZeppelin's ERC20.sol and interfaces with Yearn Finance's vaults and registry.
