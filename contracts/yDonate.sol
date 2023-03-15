@@ -15,8 +15,8 @@ contract yDonate {
     mapping (address =>  mapping (address => uint256)) public _stakedAmount;
     mapping (address =>  mapping (address => uint256)) public _stakedShares;
 
-    event Staked(address indexed user, uint256 amount);
-    event Unstaked(address indexed user, uint256 amountUnstaked, uint256 amountDonated);
+    event Staked(address indexed user, uint256 amount, address tokenAddress);
+    event Unstaked(address indexed user, uint256 amountUnstaked, uint256 amountDonated, address tokenAddress);
 
     constructor (address registryAddress, address receiver) {
         _yRegistryAddress = registryAddress;
@@ -44,7 +44,7 @@ contract yDonate {
         _stakedAmount[msg.sender][tokenAddress] = amount;
         _stakedShares[msg.sender][tokenAddress] = yVault.deposit(amount);
 
-        emit Staked(msg.sender, amount);
+        emit Staked(msg.sender, amount, tokenAddress);
     }
 
     function unstake(address tokenAddress) public returns (uint256 stakedAmount) {
@@ -73,7 +73,7 @@ contract yDonate {
             want.transfer(_receiver, donated);
         }
 
-        emit Unstaked(msg.sender, stakedAmount, donated);
+        emit Unstaked(msg.sender, stakedAmount, donated, tokenAddress);
         return stakedAmount;
     }
 
