@@ -8,7 +8,7 @@ This contract allows users to stake ERC20 tokens that are deposited in Yearn Vau
 - https://github.com/MarcoWorms/yDonate/blob/master/contracts/yDonate.sol  
 
 **Live preview at:**
-- https://ftmscan.com/address/0x6c861a651F303CFb92cbaa4D9c9AB35B84d6c3f0
+- https://ftmscan.com/address/0x5231F0a401f4fA03424871BCCEa32094341f4d32
 
 
 <img width="750" alt="Screenshot 2023-03-15 at 3 10 11 PM" src="https://user-images.githubusercontent.com/7863230/225454965-5e3e3985-cb63-419c-9bd6-ff926db01274.png">
