@@ -2,7 +2,7 @@
 
 > yield for a cause
 
-This contract allows users to stake ERC20 tokens that are deposited in Yearn Vaults and the yield generated is sent to one receiver. yDonate automatically detects the vault for the token staked by using the [Yearn FTM Registry](https://ftmscan.com/address/0x727fe1759430df13655ddb0731dE0D0FDE929b04)
+This contract allows users to stake ERC20 tokens that are deposited in Yearn Vaults and the yield generated is sent to one receiver. yDonate automatically detects the vault for the token staked by using the [Yearn Registry](https://docs.yearn.finance/getting-started/products/addresses)
 
 **Source:**
 - https://github.com/MarcoWorms/yDonate/blob/master/contracts/yDonate.sol  
