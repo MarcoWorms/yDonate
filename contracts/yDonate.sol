@@ -11,9 +11,10 @@ contract yDonate {
 
     address public _receiver;
 
-    // user address => token address => amount staked
+    // user address => token address => data
     mapping (address =>  mapping (address => uint256)) public _stakedAmount;
     mapping (address =>  mapping (address => uint256)) public _stakedShares;
+    mapping (address =>  mapping (address => address)) public _stakedvaultAddress;
 
     event Staked(address indexed user, uint256 amount, address tokenAddress);
     event Unstaked(address indexed user, uint256 amountUnstaked, uint256 amountDonated, address tokenAddress);
@@ -43,6 +44,7 @@ contract yDonate {
 
         _stakedAmount[msg.sender][tokenAddress] = amount;
         _stakedShares[msg.sender][tokenAddress] = yVault.deposit(amount);
+        _stakedvaultAddress[msg.sender][tokenAddress] = yVaultAddress;
 
         emit Staked(msg.sender, amount, tokenAddress);
     }
@@ -56,7 +58,7 @@ contract yDonate {
         _stakedShares[msg.sender][tokenAddress] = 0;
         _stakedAmount[msg.sender][tokenAddress] = 0;
 
-        address yVaultAddress = _yRegistry.latestVault(tokenAddress);
+        address yVaultAddress = _stakedvaultAddress[msg.sender][tokenAddress];
         IyVault yVault = IyVault(yVaultAddress);
         ERC20 want = ERC20(tokenAddress);
 
